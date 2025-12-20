@@ -17,7 +17,7 @@ On macOS, install via Homebrew:
 ```
 brew install grype
 ```
-
+Github Link : https://github.com/anchore/grype
 ## Usage
 To scan the python:3.10-slim image and view all detected vulnerabilities:
 
@@ -28,6 +28,7 @@ grype python:3.10-slim
 ## 2. Docker Scout
 Docker Scout is a native security tool integrated directly into the Docker ecosystem. It doesn't just find vulnerabilities; it provides detailed remediation advice and recommendations for base image upgrades.
 
+Docker scout documentation : https://docs.docker.com/scout/
 ### Authentication
 Before using Scout, you must be logged into your Docker account:
 

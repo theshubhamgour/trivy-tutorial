@@ -1,0 +1,6 @@
+{
+  "service": "payment",
+  "api_key": "sk_live_FAKEapikey1234567890",
+  "jwt_secret": "thisIsAFakeJwtSecretForDemo",
+  "smtp_password": "EmailPassword@123"
+}

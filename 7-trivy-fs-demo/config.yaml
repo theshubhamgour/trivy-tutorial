@@ -1,0 +1,13 @@
+app:
+  name: trivy-fs-demo
+  debug: true
+
+database:
+  user: admin
+  password: Admin@12345
+  host: localhost
+  port: 5432
+
+aws:
+  access_key: AKIA123456FAKEKEY
+  secret_key: fakeSecretKeyYamlDemo123

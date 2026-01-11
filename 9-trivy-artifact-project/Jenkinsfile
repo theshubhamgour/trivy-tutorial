@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+
+    environment {
+        APP_DIR = "9-trivy-artifact-project"
+        DOCKER_IMAGE = "python-trivy-demo"
+        IMAGE_NAME = "${DOCKER_IMAGE}:${BUILD_NUMBER}"
+        TRIVY_CACHE_DIR = "${WORKSPACE}/.trivy_cache"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dir("${APP_DIR}") {
+                    sh "docker build -t ${IMAGE_NAME} ."
+                }
+            }
+        }
+
+        stage('Trivy Image Scan') {
+            steps {
+                sh "mkdir -p ${TRIVY_CACHE_DIR} reports"
+
+                dir("${APP_DIR}") {
+
+                    sh """
+                    trivy image \
+                      --cache-dir ${TRIVY_CACHE_DIR} \
+                      --format json \
+                      --output ${WORKSPACE}/reports/trivy-image.json \
+                      ${IMAGE_NAME}
+                    """
+
+                    sh """
+                    trivy image \
+                      --cache-dir ${TRIVY_CACHE_DIR} \
+                      --format template \
+                      --template @trivy/html.tpl \
+                      --output ${WORKSPACE}/reports/trivy-image.html \
+                      ${IMAGE_NAME}
+                    """
+
+                    sh """
+                    trivy image \
+                      --cache-dir ${TRIVY_CACHE_DIR} \
+                      --format cyclonedx \
+                      --output ${WORKSPACE}/reports/sbom.json \
+                      ${IMAGE_NAME}
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'reports/*', fingerprint: true
+        }
+    }
+}

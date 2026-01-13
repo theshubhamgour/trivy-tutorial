@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>mongo:7.0 (ubuntu 22.04) - Trivy Report - 2026-01-13 09:12:38.871149 +0530 IST m=+14.597969835 </title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>mongo:7.0 (ubuntu 22.04) - Trivy Report - 2026-01-13 09:12:38.871179 +0530 IST m=+14.597999876</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">ubuntu</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">gpgv</td>
+        <td>CVE-2025-68973</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">2.2.27-3ubuntu2.4</td>
+        <td>2.2.27-3ubuntu2.5</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/12/29/11">http://www.openwall.com/lists/oss-security/2025/12/29/11</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-68973">https://access.redhat.com/security/cve/CVE-2025-68973</a>
+          <a href="https://dev.gnupg.org/T7906">https://dev.gnupg.org/T7906</a>
+          <a href="https://dev.gnupg.org/T8001">https://dev.gnupg.org/T8001</a>
+          <a href="https://github.com/gpg/gnupg/blob/ff30683418695f5d2cc9e6cf8c9418e09378ebe4/g10/armor.c#L1305-L1306">https://github.com/gpg/gnupg/blob/ff30683418695f5d2cc9e6cf8c9418e09378ebe4/g10/armor.c#L1305-L1306</a>
+          <a href="https://github.com/gpg/gnupg/commit/115d138ba599328005c5321c0ef9f00355838ca9">https://github.com/gpg/gnupg/commit/115d138ba599328005c5321c0ef9f00355838ca9</a>
+          <a href="https://github.com/gpg/gnupg/commit/115d138ba599328005c5321c0ef9f00355838ca9 (gnupg-2.5.14)">https://github.com/gpg/gnupg/commit/115d138ba599328005c5321c0ef9f00355838ca9 (gnupg-2.5.14)</a>
+          <a href="https://github.com/gpg/gnupg/commit/1e929abd20fa2e4be3797a137caca63a971d5372 (gnupg-2.2.51)">https://github.com/gpg/gnupg/commit/1e929abd20fa2e4be3797a137caca63a971d5372 (gnupg-2.2.51)</a>
+          <a href="https://github.com/gpg/gnupg/commit/4ecc5122f20e10c17172ed72f4fa46c784b5fb48 (gnupg-2.4.9)">https://github.com/gpg/gnupg/commit/4ecc5122f20e10c17172ed72f4fa46c784b5fb48 (gnupg-2.4.9)</a>
+          <a href="https://github.com/gpg/gnupg/compare/gnupg-2.2.50...gnupg-2.2.51">https://github.com/gpg/gnupg/compare/gnupg-2.2.50...gnupg-2.2.51</a>
+          <a href="https://gpg.fail/memcpy">https://gpg.fail/memcpy</a>
+          <a href="https://media.ccc.de/v/39c3-to-sign-or-not-to-sign-practical-vulnerabilities-i">https://media.ccc.de/v/39c3-to-sign-or-not-to-sign-practical-vulnerabilities-i</a>
+          <a href="https://news.ycombinator.com/item?id=46403200">https://news.ycombinator.com/item?id=46403200</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68973">https://nvd.nist.gov/vuln/detail/CVE-2025-68973</a>
+          <a href="https://ubuntu.com/security/notices/USN-7946-1">https://ubuntu.com/security/notices/USN-7946-1</a>
+          <a href="https://ubuntu.com/security/notices/USN-7946-2">https://ubuntu.com/security/notices/USN-7946-2</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-68973">https://www.cve.org/CVERecord?id=CVE-2025-68973</a>
+          <a href="https://www.openwall.com/lists/oss-security/2025/12/28/5">https://www.openwall.com/lists/oss-security/2025/12/28/5</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">node-pkg</th></tr>
+      <tr><th colspan="6">No Vulnerabilities found</th></tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-22874</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.4</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-22874">https://access.redhat.com/security/cve/CVE-2025-22874</a>
+          <a href="https://go.dev/cl/670375">https://go.dev/cl/670375</a>
+          <a href="https://go.dev/issue/73612">https://go.dev/issue/73612</a>
+          <a href="https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A">https://groups.google.com/g/golang-announce/c/ufZ8WpEsA3A</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-22874">https://nvd.nist.gov/vuln/detail/CVE-2025-22874</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3749">https://pkg.go.dev/vuln/GO-2025-3749</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-22874">https://www.cve.org/CVERecord?id=CVE-2025-22874</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-47907</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.23.12, 1.24.6</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/08/06/1">http://www.openwall.com/lists/oss-security/2025/08/06/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:20909">https://access.redhat.com/errata/RHSA-2025:20909</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-47907">https://access.redhat.com/security/cve/CVE-2025-47907</a>
+          <a href="https://bugzilla.redhat.com/2387083">https://bugzilla.redhat.com/2387083</a>
+          <a href="https://bugzilla.redhat.com/2393152">https://bugzilla.redhat.com/2393152</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-20909.html">https://errata.almalinux.org/9/ALSA-2025-20909.html</a>
+          <a href="https://go.dev/cl/693735">https://go.dev/cl/693735</a>
+          <a href="https://go.dev/issue/74831">https://go.dev/issue/74831</a>
+          <a href="https://groups.google.com/g/golang-announce/c/x5MKroML2yM">https://groups.google.com/g/golang-announce/c/x5MKroML2yM</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-47907.html">https://linux.oracle.com/cve/CVE-2025-47907.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-20983.html">https://linux.oracle.com/errata/ELSA-2025-20983.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-47907">https://nvd.nist.gov/vuln/detail/CVE-2025-47907</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-3849">https://pkg.go.dev/vuln/GO-2025-3849</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-47907">https://www.cve.org/CVERecord?id=CVE-2025-47907</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.0</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+      <tr class="group-header"><th colspan="6">gobinary</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-58183</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.6</td>
+        <td>1.24.8, 1.25.2</td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2025/10/08/1">http://www.openwall.com/lists/oss-security/2025/10/08/1</a>
+          <a href="https://access.redhat.com/errata/RHSA-2025:23326">https://access.redhat.com/errata/RHSA-2025:23326</a>
+          <a href="https://access.redhat.com/security/cve/CVE-2025-58183">https://access.redhat.com/security/cve/CVE-2025-58183</a>
+          <a href="https://bugzilla.redhat.com/2407258">https://bugzilla.redhat.com/2407258</a>
+          <a href="https://bugzilla.redhat.com/show_bug.cgi?id=2407258">https://bugzilla.redhat.com/show_bug.cgi?id=2407258</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-58183</a>
+          <a href="https://errata.almalinux.org/9/ALSA-2025-23326.html">https://errata.almalinux.org/9/ALSA-2025-23326.html</a>
+          <a href="https://errata.rockylinux.org/RLSA-2025:23948">https://errata.rockylinux.org/RLSA-2025:23948</a>
+          <a href="https://go.dev/cl/709861">https://go.dev/cl/709861</a>
+          <a href="https://go.dev/issue/75677">https://go.dev/issue/75677</a>
+          <a href="https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI">https://groups.google.com/g/golang-announce/c/4Emdl2iQ_bI</a>
+          <a href="https://linux.oracle.com/cve/CVE-2025-58183.html">https://linux.oracle.com/cve/CVE-2025-58183.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2025-23948.html">https://linux.oracle.com/errata/ELSA-2025-23948.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-58183">https://nvd.nist.gov/vuln/detail/CVE-2025-58183</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4014">https://pkg.go.dev/vuln/GO-2025-4014</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-58183">https://www.cve.org/CVERecord?id=CVE-2025-58183</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">stdlib</td>
+        <td>CVE-2025-61729</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">v1.24.6</td>
+        <td>1.24.11, 1.25.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-61729">https://access.redhat.com/security/cve/CVE-2025-61729</a>
+          <a href="https://go.dev/cl/725920">https://go.dev/cl/725920</a>
+          <a href="https://go.dev/issue/76445">https://go.dev/issue/76445</a>
+          <a href="https://groups.google.com/g/golang-announce/c/8FJoBkPddm4">https://groups.google.com/g/golang-announce/c/8FJoBkPddm4</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-61729">https://nvd.nist.gov/vuln/detail/CVE-2025-61729</a>
+          <a href="https://pkg.go.dev/vuln/GO-2025-4155">https://pkg.go.dev/vuln/GO-2025-4155</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-61729">https://www.cve.org/CVERecord?id=CVE-2025-61729</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+    </table>
+  </body>
+</html>

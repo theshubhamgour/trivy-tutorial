@@ -1,0 +1,9 @@
+nginx:mainline
+redis:8.4.0-alpine
+postgres:15-alpine
+alpine:3.20
+python:3.14-slim
+node:25.2.1
+mongo:7.0
+httpd:2.4.57
+grafana/grafana:main-ubuntu
